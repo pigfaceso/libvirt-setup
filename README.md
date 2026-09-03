@@ -8,6 +8,8 @@
   - Then `unzip metasploitable-linux-2.0.0.zip && cd Metasploitable2-Linux`
   - Convert to .qcow `qemu-img convert -f vmdk Metasploitable.vmdk -O qcow2 Metasploitable.qcow2`
 
+- Move .qcow2 file to `virsh vol-list --pool default` directory
+
 ## Network
 - `virsh net-define <network>.xml`
 - `virsh net-start <network>.xml`
