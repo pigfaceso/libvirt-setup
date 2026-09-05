@@ -1,4 +1,4 @@
-# libvirt setup for hacking lab on university
+# libvirt setup for lab on university
 
 ## Virtual Disk
 - **Kali**
