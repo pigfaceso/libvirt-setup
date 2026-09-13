@@ -1,4 +1,4 @@
-# libvirt setup for lab on university
+# libvirt setup
 
 ## libvirt intstall
 ### Fedora
