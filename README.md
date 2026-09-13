@@ -26,9 +26,6 @@ Move .qcow2 file to `virsh vol-list --pool default` directory (require `sudo`)
 > Find more about [libvirt network XML format](https://libvirt.org/formatnetwork.html)
 
 ## Virtual Machine (VM)
-From My `vm/` directory
-- `virsh define vm/<name>.xml`
-Or use `virt-install` this is example
 - `virt-install --name <name> --vcpus <cpu core eg. 2> --memory <memory (MiB) eg. 8192> --disk vol=<[vol-name]/[QCOW2 file] eg. default/kali.qcow2> --import --network network=<network> --network network=<network> --osinfo <libvirt-osinfo>`.
 - `virsh list [--all]` List all VM
 - `virsh start <name>` Start VM
