@@ -1,6 +1,6 @@
 # libvirt setup
 
-## libvirt intstall
+## libvirt install
 ### Fedora
 - `sudo dnf install @virtualization` (try `dnf group list --hidden` and `dnf group info <group-name>`)
 - `sudo usermod -aG libvirt,kvm $USER`
