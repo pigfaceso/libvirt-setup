@@ -1,13 +1,13 @@
-<domain type='kvm' id='2'>
+<domain type='kvm' id='3'>
   <name>kali</name>
-  <uuid>e254fa4c-3dab-4c1d-ae26-a5b58de16f7a</uuid>
+  <uuid>aaeb5811-d4bd-461f-8fe5-2bd9700424ed</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
       <libosinfo:os id="http://debian.org/debian/13"/>
     </libosinfo:libosinfo>
   </metadata>
-  <memory unit='KiB'>2097152</memory>
-  <currentMemory unit='KiB'>2097152</currentMemory>
+  <memory unit='KiB'>8388608</memory>
+  <currentMemory unit='KiB'>8388608</currentMemory>
   <vcpu placement='static'>2</vcpu>
   <resource>
     <partition>/machine</partition>
@@ -144,41 +144,41 @@
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </controller>
     <interface type='network'>
-      <mac address='52:54:00:87:5d:5b'/>
-      <source network='hostonly' portid='e9d0e5aa-c2e8-42b4-ae96-cab0dd9d3822' bridge='virbr-hostonly'/>
-      <target dev='vnet0'/>
+      <mac address='52:54:00:16:6c:f5'/>
+      <source network='hostonly' portid='9e3d1834-8542-46b6-8592-d66c7da331e4' bridge='virbr-hostonly'/>
+      <target dev='vnet3'/>
       <model type='virtio'/>
       <alias name='net0'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
     </interface>
     <interface type='network'>
-      <mac address='52:54:00:f1:11:ac'/>
-      <source network='nat' portid='38f51ad5-eb85-4806-9b0e-39faba526417' bridge='virbr-nat'/>
-      <target dev='vnet1'/>
+      <mac address='52:54:00:10:65:f3'/>
+      <source network='nat' portid='c827a077-2c4e-4f92-b0a0-7fde7e2d4e04' bridge='virbr-nat'/>
+      <target dev='vnet4'/>
       <model type='virtio'/>
       <alias name='net1'/>
       <address type='pci' domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
     </interface>
     <serial type='pty'>
-      <source path='/dev/pts/0'/>
+      <source path='/dev/pts/1'/>
       <target type='isa-serial' port='0'>
         <model name='isa-serial'/>
       </target>
       <alias name='serial0'/>
     </serial>
-    <console type='pty' tty='/dev/pts/0'>
-      <source path='/dev/pts/0'/>
+    <console type='pty' tty='/dev/pts/1'>
+      <source path='/dev/pts/1'/>
       <target type='serial' port='0'/>
       <alias name='serial0'/>
     </console>
     <channel type='unix'>
-      <source mode='bind' path='/run/libvirt/qemu/channel/2-kali/org.qemu.guest_agent.0'/>
+      <source mode='bind' path='/run/libvirt/qemu/channel/3-kali/org.qemu.guest_agent.0'/>
       <target type='virtio' name='org.qemu.guest_agent.0' state='connected'/>
       <alias name='channel0'/>
       <address type='virtio-serial' controller='0' bus='0' port='1'/>
     </channel>
     <channel type='spicevmc'>
-      <target type='virtio' name='com.redhat.spice.0' state='connected'/>
+      <target type='virtio' name='com.redhat.spice.0' state='disconnected'/>
       <alias name='channel1'/>
       <address type='virtio-serial' controller='0' bus='0' port='2'/>
     </channel>
@@ -228,8 +228,8 @@
     </rng>
   </devices>
   <seclabel type='dynamic' model='selinux' relabel='yes'>
-    <label>system_u:system_r:svirt_t:s0:c647,c941</label>
-    <imagelabel>system_u:object_r:svirt_image_t:s0:c647,c941</imagelabel>
+    <label>system_u:system_r:svirt_t:s0:c225,c959</label>
+    <imagelabel>system_u:object_r:svirt_image_t:s0:c225,c959</imagelabel>
   </seclabel>
   <seclabel type='dynamic' model='dac' relabel='yes'>
     <label>+107:+107</label>
