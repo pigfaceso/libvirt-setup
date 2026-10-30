@@ -52,6 +52,19 @@ curl -LO https://cdimage.kali.org/kali-2026.2/kali-linux-2026.2-qemu-amd64.7z
   qemu-img convert -f vmdk Metasploitable.vmdk -O qcow2 Metasploitable.qcow2
   ```
 
+### MSEdge-Win10
+
+- Download from [MSEdge-Win10 | Archive](https://archive.org/download/msedge.win10.vmware.galoget)
+  ```bash
+  unzip MSEdge.Win10.VMware.zip
+  cd MSEdge-Win10-VMware
+  ```
+- Convert the VMDK disk to qcow2:
+
+  ```bash
+  qemu-img convert -f vmdk MSEdge-Win10-VMware-disk1.vmdk -O qcow2 MSEdge-Win10-VMware.qcow2
+  ```
+
 Move the `.qcow2` file into the `default` storage pool directory. Find that directory with `virsh vol-list --pool default` (requires `sudo`).
 
 ## Virtual network
