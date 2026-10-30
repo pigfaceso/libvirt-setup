@@ -1,6 +1,6 @@
-<domain type='kvm' id='6'>
+<domain type='kvm' id='7'>
   <name>win10</name>
-  <uuid>ac372dcf-cbf4-4f9f-b40c-63d93eb0fc9e</uuid>
+  <uuid>8aa60ba5-aebc-4d57-9779-526cc2c7722e</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
       <libosinfo:os id="http://microsoft.com/win/10"/>
@@ -61,7 +61,7 @@
     </disk>
     <controller type='usb' index='0' model='qemu-xhci' ports='15'>
       <alias name='usb'/>
-      <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
     </controller>
     <controller type='pci' index='0' model='pcie-root'>
       <alias name='pcie.0'/>
@@ -156,8 +156,16 @@
     </controller>
     <controller type='virtio-serial' index='0'>
       <alias name='virtio-serial0'/>
-      <address type='pci' domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
+    <interface type='network'>
+      <mac address='52:54:00:26:e6:80'/>
+      <source network='hostonly' portid='a301ffb5-2325-457a-a550-9874c2c80482' bridge='virbr-hostonly'/>
+      <target dev='vnet3'/>
+      <model type='e1000e'/>
+      <alias name='net0'/>
+      <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
+    </interface>
     <serial type='pty'>
       <source path='/dev/pts/5'/>
       <target type='isa-serial' port='0'>
@@ -212,12 +220,12 @@
     </watchdog>
     <memballoon model='virtio'>
       <alias name='balloon0'/>
-      <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </memballoon>
   </devices>
   <seclabel type='dynamic' model='selinux' relabel='yes'>
-    <label>system_u:system_r:svirt_t:s0:c339,c397</label>
-    <imagelabel>system_u:object_r:svirt_image_t:s0:c339,c397</imagelabel>
+    <label>system_u:system_r:svirt_t:s0:c24,c389</label>
+    <imagelabel>system_u:object_r:svirt_image_t:s0:c24,c389</imagelabel>
   </seclabel>
   <seclabel type='dynamic' model='dac' relabel='yes'>
     <label>+107:+107</label>
